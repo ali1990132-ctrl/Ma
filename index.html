@@ -45,7 +45,7 @@ padding-bottom:90px;
 overflow-x:hidden;
 }
 
-/* HEADER */
+/* ================= HEADER ================= */
 
 .header{
 position:sticky;
@@ -56,7 +56,7 @@ padding:9px 14px;
 display:flex;
 align-items:center;
 justify-content:space-between;
-background:rgba(6,8,16,.88);
+background:rgba(6,8,16,.90);
 backdrop-filter:blur(20px);
 border-bottom:1px solid rgba(255,255,255,.08);
 }
@@ -90,7 +90,7 @@ color:var(--muted);
 margin-top:2px;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero{
 position:relative;
@@ -120,8 +120,6 @@ min-width:177.77vh;
 min-height:100%;
 transform:translate(-50%,-50%);
 border:0;
-opacity:1;
-filter:none;
 pointer-events:none;
 }
 
@@ -132,11 +130,9 @@ z-index:1;
 background:
 linear-gradient(
 180deg,
-rgba(5,6,11,.10) 0%,
-rgba(5,6,11,.10) 45%,
-rgba(5,6,11,.30) 100%
+rgba(5,6,11,.18),
+rgba(5,6,11,.30)
 );
-pointer-events:none;
 }
 
 .hero-content{
@@ -170,17 +166,24 @@ max-width:410px;
 margin:0 auto 20px;
 padding:8px 12px;
 border-radius:13px;
-background:rgba(0,0,0,.20);
+background:rgba(0,0,0,.25);
 backdrop-filter:blur(3px);
 text-shadow:0 2px 7px #000;
 }
 
+/* ================= TRIAL ================= */
+
 .trial-big{
 margin:18px auto;
-padding:15px;
+padding:18px;
 max-width:390px;
-border-radius:18px;
-background:rgba(12,10,15,.50);
+border-radius:20px;
+background:
+linear-gradient(
+135deg,
+rgba(75,25,110,.82),
+rgba(90,20,75,.78)
+);
 backdrop-filter:blur(7px);
 border:1px solid rgba(255,176,32,.55);
 box-shadow:0 10px 35px rgba(0,0,0,.35);
@@ -188,13 +191,16 @@ box-shadow:0 10px 35px rgba(0,0,0,.35);
 
 .trial-big strong{
 display:block;
-font-size:20px;
+font-size:21px;
 color:#ffd166;
+margin-bottom:7px;
 }
 
 .trial-big span{
 font-size:10px;
 }
+
+/* ================= BUTTONS ================= */
 
 .hero-buttons{
 display:flex;
@@ -224,7 +230,7 @@ color:#fff;
 backdrop-filter:blur(8px);
 }
 
-/* SOUND */
+/* ================= SOUND ================= */
 
 .sound-btn{
 position:absolute;
@@ -239,11 +245,10 @@ padding:11px 15px;
 border-radius:15px;
 font-size:11px;
 font-weight:1000;
-box-shadow:0 8px 25px rgba(0,0,0,.45);
 cursor:pointer;
 }
 
-/* FLOATING */
+/* ================= FLOAT ================= */
 
 .float-btn{
 position:fixed;
@@ -271,12 +276,10 @@ bottom:100px;
 background:#25d366;
 }
 
-/* SEARCH */
+/* ================= SEARCH ================= */
 
 .search-wrap{
 padding:12px 15px 5px;
-position:relative;
-z-index:10;
 }
 
 .search-box{
@@ -288,14 +291,13 @@ background:#101522;
 color:#fff;
 outline:none;
 font-size:12px;
-box-shadow:0 8px 25px rgba(0,0,0,.2);
 }
 
 .search-box::placeholder{
 color:#8994a8;
 }
 
-/* SECTIONS */
+/* ================= SECTIONS ================= */
 
 .section{
 padding:18px 15px 8px;
@@ -305,11 +307,11 @@ padding:18px 15px 8px;
 display:flex;
 align-items:center;
 justify-content:space-between;
-margin-bottom:12px;
+margin-bottom:14px;
 }
 
 .section-title{
-font-size:18px;
+font-size:19px;
 font-weight:1000;
 }
 
@@ -318,7 +320,7 @@ font-size:9px;
 color:var(--muted);
 }
 
-/* FEATURES */
+/* ================= FEATURES ================= */
 
 .features{
 display:flex;
@@ -333,9 +335,9 @@ display:none;
 }
 
 .feature{
-min-width:125px;
-height:105px;
-border-radius:18px;
+min-width:135px;
+height:112px;
+border-radius:20px;
 padding:14px;
 display:flex;
 flex-direction:column;
@@ -345,261 +347,158 @@ border:1px solid rgba(255,255,255,.08);
 }
 
 .feature-icon{
-font-size:30px;
+font-size:35px;
 }
 
 .feature strong{
-font-size:11px;
+font-size:12px;
 }
 
-/* OFFERS */
+/* =====================================================
+   OFFERS - MOVING STRIP
+===================================================== */
 
 .offers{
-padding:18px 15px;
-background:linear-gradient(
+padding:20px 0 18px;
+background:
+linear-gradient(
 180deg,
-rgba(255,45,136,.12),
+rgba(255,45,136,.13),
+rgba(145,71,255,.05),
 transparent
 );
+overflow:hidden;
 }
 
-.offer-title{
-font-size:20px;
+.offer-heading{
+padding:0 15px 12px;
+font-size:21px;
 font-weight:1000;
-margin-bottom:12px;
 }
 
-.offer-scroll{
+.offer-track{
 display:flex;
 gap:12px;
 overflow-x:auto;
-scroll-snap-type:x mandatory;
+padding:5px 15px 15px;
 scrollbar-width:none;
-padding-bottom:5px;
+scroll-snap-type:x mandatory;
 }
 
-.offer-scroll::-webkit-scrollbar{
+.offer-track::-webkit-scrollbar{
 display:none;
 }
 
 .offer-card{
-min-width:88%;
+flex:0 0 86%;
+min-height:150px;
 scroll-snap-align:center;
-padding:17px;
-border-radius:20px;
+position:relative;
+overflow:hidden;
+padding:16px;
+border-radius:22px;
 background:
-linear-gradient(135deg,rgba(145,71,255,.35),rgba(255,45,136,.2));
-border:1px solid rgba(255,255,255,.15);
-box-shadow:0 12px 35px rgba(0,0,0,.3);
+linear-gradient(
+135deg,
+rgba(145,71,255,.38),
+rgba(255,45,136,.20)
+);
+border:1px solid rgba(255,255,255,.14);
+box-shadow:0 14px 35px rgba(0,0,0,.35);
 }
 
-.offer-card h3{
+.offer-card.pes{
+background:
+linear-gradient(
+135deg,
+rgba(30,45,150,.72),
+rgba(15,120,190,.28)
+);
+}
+
+.offer-card.ludo{
+background:
+linear-gradient(
+135deg,
+rgba(255,100,20,.28),
+rgba(145,71,255,.30)
+);
+}
+
+.offer-card.tiger{
+background:
+linear-gradient(
+135deg,
+rgba(245,158,11,.28),
+rgba(30,20,5,.65)
+);
+}
+
+.offer-card.best{
+background:
+linear-gradient(
+135deg,
+rgba(255,180,20,.25),
+rgba(0,0,0,.70)
+);
+border-color:rgba(255,190,40,.35);
+}
+
+.offer-image{
+position:absolute;
+left:10px;
+top:10px;
+width:105px;
+height:105px;
+border-radius:18px;
+object-fit:cover;
+border:1px solid rgba(255,255,255,.16);
+box-shadow:0 8px 25px rgba(0,0,0,.4);
+}
+
+.offer-content{
+position:relative;
+z-index:2;
+padding-left:115px;
+min-height:115px;
+}
+
+.offer-content h3{
 font-size:18px;
+font-weight:1000;
+margin-bottom:6px;
 }
 
-.offer-card p{
+.offer-content p{
 font-size:10px;
+line-height:1.8;
 color:#ddd;
-margin-top:5px;
-line-height:1.7;
 }
 
 .offer-price{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-top:12px;
-}
-
-.offer-price strong{
-font-size:22px;
+font-size:21px;
+font-weight:1000;
 color:#ffd166;
+margin-top:9px;
 }
 
-/* GENERAL PRODUCT SLIDER */
-
-.product-section{
-padding:20px 15px;
-}
-
-.product-section.purple{
-background:linear-gradient(
-180deg,
-rgba(145,71,255,.10),
-transparent
-);
-}
-
-.product-section.pink{
-background:linear-gradient(
-180deg,
-rgba(255,45,136,.08),
-transparent
-);
-}
-
-.product-section.cyan{
-background:linear-gradient(
-180deg,
-rgba(6,182,212,.08),
-transparent
-);
-}
-
-.product-section.blue{
-background:linear-gradient(
-180deg,
-rgba(59,130,246,.08),
-transparent
-);
-}
-
-.product-section.green{
-background:linear-gradient(
-180deg,
-rgba(22,199,132,.08),
-transparent
-);
-}
-
-.product-section.gold{
-background:linear-gradient(
-180deg,
-rgba(255,176,32,.08),
-transparent
-);
-}
-
-.product-section.red{
-background:linear-gradient(
-180deg,
-rgba(239,68,68,.08),
-transparent
-);
-}
-
-.product-scroll{
-display:flex;
-gap:12px;
-overflow-x:auto;
-scroll-snap-type:x mandatory;
-scrollbar-width:none;
-padding:4px 1px 10px;
-}
-
-.product-scroll::-webkit-scrollbar{
-display:none;
-}
-
-.product-card{
-position:relative;
-min-width:84%;
-scroll-snap-align:start;
-border-radius:24px;
-overflow:hidden;
-background:
-linear-gradient(145deg,#171d2d,#0c1019);
-border:1px solid rgba(255,255,255,.09);
-box-shadow:
-0 15px 40px rgba(0,0,0,.35);
-}
-
-.product-image{
-width:100%;
-height:210px;
-display:grid;
-place-items:center;
-overflow:hidden;
-background:
-radial-gradient(circle,#3b2165,#10121c);
-}
-
-.product-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
-}
-
-.product-placeholder{
-font-size:75px;
-}
-
-.product-content{
-padding:15px;
-}
-
-.product-top{
-display:flex;
-justify-content:space-between;
-align-items:flex-start;
-gap:10px;
-}
-
-.product-name{
-font-size:19px;
-font-weight:1000;
-}
-
-.product-badge{
-padding:6px 9px;
+.offer-btn{
+display:inline-flex;
+margin-top:8px;
+padding:8px 12px;
 border-radius:10px;
-font-size:8px;
-font-weight:1000;
-background:rgba(255,45,136,.15);
-color:#ff72ae;
-border:1px solid rgba(255,45,136,.25);
-white-space:nowrap;
-}
-
-.product-description{
-font-size:10px;
-line-height:1.8;
-color:var(--muted);
-margin-top:6px;
-}
-
-.product-price{
-margin-top:12px;
-padding:12px;
-border-radius:14px;
-background:rgba(255,255,255,.045);
-border:1px solid rgba(255,255,255,.06);
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:8px;
-}
-
-.product-price span{
-font-size:9px;
-color:#aab5c7;
-}
-
-.product-price strong{
-font-size:17px;
-color:#6ee7b7;
-white-space:nowrap;
-}
-
-.product-order{
-display:block;
-width:100%;
-margin-top:10px;
-padding:12px;
-border-radius:13px;
-text-align:center;
+background:#10b981;
+color:white;
 text-decoration:none;
-font-size:11px;
+font-size:9px;
 font-weight:1000;
-color:#fff;
-background:linear-gradient(135deg,#10b981,#059669);
 }
 
-/* IPTV */
+/* =====================================================
+   PRODUCT CARDS
+===================================================== */
 
 .iptv-section{
-padding:18px 15px;
 background:linear-gradient(
 180deg,
 rgba(145,71,255,.12),
@@ -610,16 +509,15 @@ transparent
 .iptv-grid{
 display:flex;
 flex-direction:column;
-gap:14px;
+gap:15px;
 }
 
 .iptv-card{
 position:relative;
 overflow:hidden;
 width:100%;
-min-height:235px;
-padding:16px;
-border-radius:23px;
+padding:15px;
+border-radius:24px;
 background:
 linear-gradient(
 135deg,
@@ -632,19 +530,32 @@ box-shadow:
 inset 0 1px rgba(255,255,255,.06);
 }
 
+.iptv-card::before{
+content:"";
+position:absolute;
+width:170px;
+height:170px;
+border-radius:50%;
+background:rgba(145,71,255,.12);
+filter:blur(30px);
+top:-70px;
+left:-40px;
+pointer-events:none;
+}
+
 .iptv-main{
 position:relative;
 z-index:2;
 display:flex;
 align-items:center;
-gap:16px;
+gap:15px;
 }
 
 .iptv-icon{
-flex:0 0 105px;
-width:105px;
-height:105px;
-border-radius:25px;
+flex:0 0 110px;
+width:110px;
+height:110px;
+border-radius:24px;
 display:grid;
 place-items:center;
 font-size:55px;
@@ -653,6 +564,14 @@ linear-gradient(135deg,#9147ff,#ff2d88);
 box-shadow:
 0 10px 30px rgba(145,71,255,.35);
 border:1px solid rgba(255,255,255,.12);
+overflow:hidden;
+}
+
+.iptv-icon img{
+width:100%;
+height:100%;
+object-fit:cover;
+display:block;
 }
 
 .iptv-info{
@@ -661,7 +580,7 @@ min-width:0;
 }
 
 .iptv-card h3{
-font-size:24px;
+font-size:23px;
 font-weight:1000;
 line-height:1.2;
 margin-bottom:7px;
@@ -670,8 +589,7 @@ margin-bottom:7px;
 .iptv-card p.description{
 font-size:10px;
 color:var(--muted);
-line-height:1.7;
-margin:0;
+line-height:1.8;
 }
 
 .price-list{
@@ -684,15 +602,15 @@ margin-top:15px;
 }
 
 .price-box{
-min-height:53px;
-padding:7px 8px;
+min-height:54px;
+padding:7px;
 border-radius:13px;
 background:rgba(255,255,255,.045);
 border:1px solid rgba(255,255,255,.07);
 display:flex;
 align-items:center;
 justify-content:space-between;
-gap:6px;
+gap:5px;
 }
 
 .price-info{
@@ -707,7 +625,7 @@ color:#aab5c7;
 }
 
 .iptv-price{
-font-size:15px;
+font-size:14px;
 font-weight:1000;
 color:#6ee7b7;
 white-space:nowrap;
@@ -720,15 +638,16 @@ justify-content:center;
 text-decoration:none;
 color:#fff;
 background:linear-gradient(135deg,#10b981,#059669);
-padding:9px 12px;
+padding:8px 10px;
 border-radius:10px;
-font-size:10px;
+font-size:9px;
 font-weight:1000;
+cursor:pointer;
 border:0;
 white-space:nowrap;
 }
 
-/* PLAYERS */
+/* ================= PLAYER SECTION ================= */
 
 .players{
 background:linear-gradient(
@@ -738,74 +657,145 @@ transparent
 );
 }
 
-.player-grid{
+.player-scroll{
 display:flex;
-gap:12px;
+gap:10px;
 overflow-x:auto;
-scroll-snap-type:x mandatory;
+padding:4px 0 15px;
 scrollbar-width:none;
-padding-bottom:8px;
+scroll-snap-type:x mandatory;
 }
 
-.player-grid::-webkit-scrollbar{
+.player-scroll::-webkit-scrollbar{
 display:none;
 }
 
 .player{
-min-width:76%;
+flex:0 0 43%;
 scroll-snap-align:start;
-padding:18px;
-border-radius:22px;
+padding:15px 10px;
+text-align:center;
+border-radius:20px;
 background:linear-gradient(145deg,#101c27,#0c1018);
 border:1px solid rgba(6,182,212,.22);
-text-align:center;
 }
 
 .player-icon{
-font-size:55px;
-margin-bottom:7px;
+width:80px;
+height:80px;
+margin:0 auto 8px;
+border-radius:20px;
+display:grid;
+place-items:center;
+font-size:38px;
+background:rgba(255,255,255,.07);
 }
 
 .player h3{
-font-size:18px;
+font-size:13px;
 font-weight:1000;
 }
 
 .player p{
 font-size:9px;
 color:var(--muted);
-margin:5px 0;
+margin:4px 0;
 }
 
 .player-price{
-font-size:20px;
+font-size:15px;
 font-weight:1000;
 color:#22d3ee;
 }
 
-/* CATEGORIES COMMON */
+/* HOT */
+
+.hot-player{
+border-color:rgba(255,45,136,.45);
+background:
+linear-gradient(
+145deg,
+rgba(55,15,40,.95),
+rgba(12,12,20,.98)
+);
+}
+
+.hot-badge{
+display:inline-block;
+font-size:8px;
+font-weight:1000;
+padding:4px 8px;
+border-radius:20px;
+background:#ef4444;
+color:#fff;
+margin-bottom:7px;
+}
+
+/* ================= GENERIC CATEGORY ================= */
 
 .category{
 margin:10px 15px;
-padding:18px 0;
-border-radius:22px;
+padding:18px;
+border-radius:23px;
+border:1px solid rgba(255,255,255,.08);
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.055),
+rgba(255,255,255,.018)
+);
+}
+
+.category.games{
+border-color:rgba(239,68,68,.25);
+}
+
+.category.internet{
+border-color:rgba(6,182,212,.25);
+}
+
+.category.cards{
+border-color:rgba(59,130,246,.3);
+}
+
+.category.money{
+border-color:rgba(16,185,129,.3);
+}
+
+.category.social{
+border-color:rgba(236,72,153,.3);
+}
+
+.category.entertainment{
+border-color:rgba(168,85,247,.3);
+}
+
+.category.sports{
+border-color:rgba(34,197,94,.3);
+}
+
+.category.ai{
+border-color:rgba(145,71,255,.40);
+}
+
+.category.design{
+border-color:rgba(245,158,11,.35);
 }
 
 .cat-head{
 display:flex;
 align-items:center;
 gap:10px;
-padding:0 3px;
 margin-bottom:14px;
 }
 
 .cat-icon{
-width:55px;
-height:55px;
-border-radius:16px;
+width:58px;
+height:58px;
+border-radius:17px;
 display:grid;
 place-items:center;
-font-size:28px;
+font-size:30px;
 background:rgba(255,255,255,.07);
 }
 
@@ -819,179 +809,91 @@ color:var(--muted);
 margin-top:3px;
 }
 
-.cat-scroll{
+.items{
 display:flex;
-gap:12px;
+gap:10px;
 overflow-x:auto;
-scroll-snap-type:x mandatory;
 scrollbar-width:none;
-padding:4px 2px 12px;
+scroll-snap-type:x mandatory;
+padding-bottom:4px;
 }
 
-.cat-scroll::-webkit-scrollbar{
+.items::-webkit-scrollbar{
 display:none;
 }
 
-.cat-card{
-min-width:80%;
+.item{
+flex:0 0 72%;
 scroll-snap-align:start;
-border-radius:23px;
-overflow:hidden;
-background:
-linear-gradient(145deg,#171d2d,#0c1018);
-border:1px solid rgba(255,255,255,.09);
-box-shadow:0 12px 32px rgba(0,0,0,.3);
-}
-
-.cat-card-image{
-height:165px;
-display:grid;
-place-items:center;
-background:
-radial-gradient(circle,#392060,#11131d);
-font-size:75px;
-overflow:hidden;
-}
-
-.cat-card-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.cat-card-content{
 padding:15px;
-}
-
-.cat-card-content h3{
-font-size:18px;
-font-weight:1000;
-}
-
-.cat-card-content p{
-font-size:10px;
-color:var(--muted);
-line-height:1.8;
-margin-top:5px;
-}
-
-.cat-price{
-margin-top:11px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:10px;
-border-radius:13px;
+border-radius:18px;
 background:rgba(255,255,255,.045);
+border:1px solid rgba(255,255,255,.06);
+min-height:135px;
 }
 
-.cat-price span{
-font-size:9px;
-color:#aab5c7;
-}
-
-.cat-price strong{
-font-size:16px;
-color:#6ee7b7;
-}
-
-.cat-order{
+.item strong{
 display:block;
-text-align:center;
-margin-top:9px;
-padding:11px;
-border-radius:12px;
-background:linear-gradient(135deg,#10b981,#059669);
-color:#fff;
-text-decoration:none;
-font-size:10px;
+font-size:14px;
 font-weight:1000;
 }
 
-/* COLORS */
+.item span{
+display:block;
+font-size:9px;
+line-height:1.8;
+color:#9eabc0;
+margin-top:6px;
+}
 
-.games{
-background:linear-gradient(
-180deg,
-rgba(239,68,68,.08),
-transparent
+.item .item-price{
+font-size:17px;
+font-weight:1000;
+color:#6ee7b7;
+margin-top:8px;
+}
+
+.item a{
+display:inline-block;
+margin-top:9px;
+padding:8px 11px;
+border-radius:10px;
+background:rgba(16,185,129,.16);
+border:1px solid rgba(16,185,129,.3);
+color:#6ee7b7;
+text-decoration:none;
+font-size:9px;
+font-weight:1000;
+cursor:pointer;
+}
+
+/* ================= AI ================= */
+
+.ai-item{
+background:
+linear-gradient(
+145deg,
+rgba(145,71,255,.18),
+rgba(255,255,255,.035)
 );
+border-color:rgba(145,71,255,.25);
 }
 
-.games .cat-card{
-border-color:rgba(239,68,68,.25);
+.ai-logo{
+font-size:34px;
+margin-bottom:7px;
 }
 
-.internet{
-background:linear-gradient(
-180deg,
-rgba(6,182,212,.08),
-transparent
-);
-}
+/* ================= ENTERTAINMENT ================= */
 
-.internet .cat-card{
-border-color:rgba(6,182,212,.25);
-}
-
-.cards{
-background:linear-gradient(
-180deg,
-rgba(59,130,246,.08),
-transparent
-);
-}
-
-.cards .cat-card{
-border-color:rgba(59,130,246,.25);
-}
-
-.money{
-background:linear-gradient(
-180deg,
-rgba(16,185,129,.08),
-transparent
-);
-}
-
-.money .cat-card{
-border-color:rgba(16,185,129,.25);
-}
-
-.social{
-background:linear-gradient(
-180deg,
-rgba(236,72,153,.08),
-transparent
-);
-}
-
-.social .cat-card{
-border-color:rgba(236,72,153,.25);
-}
-
-.sports{
-background:linear-gradient(
-180deg,
-rgba(34,197,94,.08),
-transparent
-);
-}
-
-.sports .cat-card{
-border-color:rgba(34,197,94,.25);
-}
-
-/* MEDIA */
-
-.media{
+.media-section{
 padding:8px 15px 18px;
 }
 
 .media-box{
 margin-bottom:15px;
-padding:15px;
-border-radius:20px;
+padding:16px;
+border-radius:22px;
 background:linear-gradient(145deg,#111827,#0d111a);
 border:1px solid rgba(255,255,255,.08);
 }
@@ -1000,11 +902,11 @@ border:1px solid rgba(255,255,255,.08);
 display:flex;
 justify-content:space-between;
 align-items:center;
-margin-bottom:10px;
+margin-bottom:12px;
 }
 
 .media-head h3{
-font-size:15px;
+font-size:16px;
 }
 
 .media-head span{
@@ -1014,7 +916,7 @@ color:var(--muted);
 
 .media-list{
 display:flex;
-gap:9px;
+gap:10px;
 overflow-x:auto;
 scrollbar-width:none;
 }
@@ -1024,49 +926,33 @@ display:none;
 }
 
 .media-card{
-min-width:125px;
-height:170px;
-border-radius:15px;
-overflow:hidden;
-position:relative;
+min-width:150px;
+height:155px;
+border-radius:17px;
+padding:14px;
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
 background:
 linear-gradient(
 160deg,
 #492d73,
 #10121c
 );
-display:flex;
-align-items:flex-end;
-}
-
-.media-card:before{
-content:"";
-position:absolute;
-inset:0;
-background:
-linear-gradient(
-180deg,
-transparent 30%,
-rgba(0,0,0,.85)
-);
-}
-
-.media-card-content{
-position:relative;
-padding:10px;
-z-index:2;
+box-shadow:0 8px 20px rgba(0,0,0,.3);
 }
 
 .media-card strong{
-font-size:11px;
+font-size:13px;
 }
 
 .media-card small{
 font-size:8px;
 color:#cbd5e1;
+margin-top:4px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 .footer{
 margin:20px 15px;
@@ -1078,7 +964,7 @@ border:1px solid rgba(255,255,255,.07);
 }
 
 .footer h2{
-font-size:19px;
+font-size:20px;
 }
 
 .footer p{
@@ -1095,7 +981,7 @@ font-size:12px;
 color:#c084fc;
 }
 
-/* BOTTOM */
+/* ================= BOTTOM ================= */
 
 .bottom{
 position:fixed;
@@ -1132,87 +1018,75 @@ font-size:19px;
 color:#c084fc;
 }
 
-/* MOBILE */
+/* ================= RESPONSIVE ================= */
 
-@media(max-width:420px){
+@media(max-width:400px){
 
-.product-card{
-min-width:86%;
+.iptv-icon{
+flex-basis:92px;
+width:92px;
+height:92px;
 }
 
-.product-image{
-height:195px;
+.iptv-card h3{
+font-size:20px;
 }
 
-.iptv-card{
-padding:13px;
+.player{
+flex-basis:48%;
 }
+
+.offer-card{
+flex-basis:90%;
+}
+
+}
+
+@media(max-width:350px){
 
 .iptv-main{
-gap:12px;
+gap:9px;
 }
 
 .iptv-icon{
-flex-basis:82px;
-width:82px;
-height:82px;
-font-size:43px;
+flex-basis:78px;
+width:78px;
+height:78px;
 }
 
 .iptv-card h3{
-font-size:21px;
-}
-
-.cat-card{
-min-width:84%;
-}
-
-.cat-card-image{
-height:155px;
-}
-
-}
-
-@media(max-width:360px){
-
-.hero{
-min-height:610px;
-}
-
-.hero h2{
-font-size:27px;
-}
-
-.product-card{
-min-width:90%;
-}
-
-.product-image{
-height:180px;
-}
-
-.iptv-icon{
-flex-basis:72px;
-width:72px;
-height:72px;
-font-size:37px;
-}
-
-.iptv-card h3{
-font-size:19px;
+font-size:18px;
 }
 
 .price-list{
 grid-template-columns:1fr;
 }
 
+.item{
+flex-basis:82%;
 }
+
+}
+
+/* ================= FADE ================= */
+
+.reveal{
+opacity:0;
+transform:translateY(15px);
+transition:.55s ease;
+}
+
+.reveal.show{
+opacity:1;
+transform:translateY(0);
+}
+
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
 <header class="header">
 
@@ -1230,7 +1104,7 @@ grid-template-columns:1fr;
 </header>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
 
 <section class="hero">
 
@@ -1240,7 +1114,6 @@ grid-template-columns:1fr;
 id="storeVideo"
 src="https://www.youtube.com/embed/LrhHPRJCJL4?autoplay=1&mute=1&loop=1&playlist=LrhHPRJCJL4&controls=0&playsinline=1&rel=0&modestbranding=1"
 title="Kara Store"
-frameborder="0"
 allow="autoplay; encrypted-media; picture-in-picture"
 allowfullscreen>
 </iframe>
@@ -1265,17 +1138,28 @@ onclick="toggleSound()">
 
 <p class="hero-sub">
 متجر رقمي متكامل للاشتراكات والخدمات الإلكترونية،
-شحن الألعاب، البطاقات، الإنترنت، السوشيال ميديا
-والمزيد من الخدمات في مكان واحد.
+شحن الألعاب، البطاقات، الإنترنت، السوشيال ميديا،
+الذكاء الاصطناعي والمزيد.
 </p>
 
 <div class="trial-big">
 
-<strong>🎁 تجربة الخدمة بـ 1000 د.ع</strong>
+<strong>🎁 عرض التجربة</strong>
 
 <span>
-جرّب الخدمة وتأكد من الجودة قبل الاشتراك
+جرّب الخدمة قبل الاشتراك وتأكد من الجودة
 </span>
+
+<div style="font-size:26px;font-weight:1000;color:#ffd166;margin:8px 0">
+1000 د.ع
+</div>
+
+<a
+class="order-small"
+target="_blank"
+href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20تجربة%20الخدمة%20بـ1000">
+اطلب التجربة
+</a>
 
 </div>
 
@@ -1284,14 +1168,14 @@ onclick="toggleSound()">
 <a
 class="hero-btn whatsapp"
 target="_blank"
-href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20تجربة%20الخدمة%20بـ1000">
-💬 أطلب الآن عبر الواتساب
+href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20الطلب%20من%20كارة%20ستور">
+💬 أطلب الآن
 </a>
 
 <a
 class="hero-btn secondary"
 href="#iptv">
-📺 مشاهدة الاشتراكات
+📺 الاشتراكات
 </a>
 
 </div>
@@ -1301,7 +1185,7 @@ href="#iptv">
 </section>
 
 
-<!-- SEARCH -->
+<!-- ================= SEARCH ================= -->
 
 <div class="search-wrap">
 
@@ -1314,7 +1198,7 @@ placeholder="🔎 ابحث عن منتج أو خدمة داخل المتجر..."
 </div>
 
 
-<!-- FEATURES -->
+<!-- ================= FEATURES ================= -->
 
 <section class="section">
 
@@ -1362,127 +1246,124 @@ placeholder="🔎 ابحث عن منتج أو خدمة داخل المتجر..."
 </div>
 
 
-<!-- OFFERS -->
+<!-- =====================================================
+     OFFERS
+===================================================== -->
 
 <section class="offers">
 
-<div class="offer-title">
-🔥 عروض خاصة
+<div class="offer-heading">
+🔥 عروض كارة ستور
 </div>
 
-<div class="offer-scroll">
+<div class="offer-track">
 
-<div class="offer-card">
+<!-- PES -->
 
-<h3>🎁 جرّب قبل الاشتراك</h3>
+<div class="offer-card pes reveal">
+
+<img
+class="offer-image"
+src="108929.jpg"
+alt="PES Mobile">
+
+<div class="offer-content">
+
+<h3>⚽ PES Mobile</h3>
 
 <p>
-تجربة الخدمة متوفرة مقابل 1000 د.ع
-حتى تتأكد من الجودة قبل الاشتراك.
+باك سواريز فقط
 </p>
 
 <div class="offer-price">
-
-<strong>1000 د.ع</strong>
+3,000 د.ع
+</div>
 
 <a
-class="order-small"
-target="_blank"
-href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20تجربة%20الخدمة%20بـ1000">
-اطلب التجربة
+class="offer-btn"
+onclick="order('PES Mobile - باك سواريز - 3000 د.ع')">
+💬 اطلب العرض
 </a>
 
 </div>
 
 </div>
 
-<div class="offer-card">
 
-<h3>⚽ PES MOBILE</h3>
+<!-- LUDO -->
+
+<div class="offer-card ludo reveal">
+
+<div class="offer-content" style="padding-left:0">
+
+<h3>🎲 يلا لودو</h3>
 
 <p>
-بكج سواريز فقط
-ضمن العرض الخاص.
+5150 ماسة
 </p>
 
 <div class="offer-price">
-
-<strong>3,000 د.ع</strong>
+15,000 د.ع
+</div>
 
 <a
-class="order-small"
-target="_blank"
-href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20عرض%20بيس%20موبايل%20بكج%20سواريز">
-اطلب العرض
+class="offer-btn"
+onclick="order('يلا لودو - 5150 ماسة - 15000 د.ع')">
+💬 اطلب العرض
 </a>
 
 </div>
 
 </div>
 
-<div class="offer-card">
 
-<h3>💎 YALLA LUDO</h3>
+<!-- TIGER -->
+
+<div class="offer-card tiger reveal">
+
+<div class="offer-content" style="padding-left:0">
+
+<h3>🐯 TIGER IPTV</h3>
 
 <p>
-5150 ماسة بسعر العرض الخاص.
+اشتراك كامل لمدة سنة
 </p>
 
 <div class="offer-price">
-
-<strong>15,000 د.ع</strong>
+18,000 د.ع
+</div>
 
 <a
-class="order-small"
-target="_blank"
-href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20يلا%20لودو%205150%20ماسة">
-اطلب العرض
+class="offer-btn"
+onclick="order('عرض TIGER IPTV - سنة - 18000 د.ع')">
+💬 اطلب العرض
 </a>
 
 </div>
 
 </div>
 
-<div class="offer-card">
 
-<h3>📺 TIGER</h3>
+<!-- BEST -->
+
+<div class="offer-card best reveal">
+
+<div class="offer-content" style="padding-left:0">
+
+<h3>🔥 عرض BEST 4K</h3>
 
 <p>
-اشتراك تايكر لمدة سنة كاملة.
+اشتراك سنة واحصل على اشتراك مجاني
 </p>
 
 <div class="offer-price">
-
-<strong>18,000 د.ع</strong>
-
-<a
-class="order-small"
-target="_blank"
-href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20عرض%20تايكر%20سنة">
-اطلب العرض
-</a>
-
+20,000 د.ع
 </div>
 
-</div>
-
-<div class="offer-card">
-
-<h3>🔥 BEST 4K</h3>
-
-<p>
-اشتراك سنة واحصل على اشتراك مجاني.
-</p>
-
-<div class="offer-price">
-
-<strong>20,000 د.ع</strong>
-
 <a
-class="order-small"
-target="_blank"
-href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20عرض%20BEST%204K%20سنة">
-اطلب العرض
+class="offer-btn"
+onclick="order('عرض BEST 4K - سنة + اشتراك مجاني - 20000 د.ع')">
+💬 اطلب العرض
 </a>
 
 </div>
@@ -1494,9 +1375,11 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 </section>
 
 
-<!-- IPTV -->
+<!-- =====================================================
+     IPTV
+===================================================== -->
 
-<section class="iptv-section" id="iptv">
+<section class="section iptv-section" id="iptv">
 
 <div class="section-head">
 
@@ -1512,20 +1395,28 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 
 <div class="iptv-grid">
 
+
 <!-- MAX -->
 
-<div class="iptv-card">
+<div class="iptv-card max-card reveal">
 
 <div class="iptv-main">
 
-<div class="iptv-icon">📺</div>
+<div class="iptv-icon">
+
+<img
+src="108930.jpg"
+alt="MAX TV">
+
+</div>
 
 <div class="iptv-info">
 
 <h3>MAX TV</h3>
 
 <p class="description">
-قنوات رياضية وترفيهية وأفلام ومسلسلات بجودة عالية.
+قنوات رياضية وترفيهية وأفلام ومسلسلات
+بجودة عالية.
 </p>
 
 </div>
@@ -1539,7 +1430,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <span class="price-duration">الشهر</span>
 <strong class="iptv-price">5,000 د.ع</strong>
 </div>
-<a class="order-small" href="https://wa.me/9647711608207?text=أريد%20MAX%20TV%20الشهر" target="_blank">واتساب</a>
+<a class="order-small"
+onclick="order('MAX TV - الشهر - 5000 د.ع')">واتساب</a>
 </div>
 
 <div class="price-box">
@@ -1547,7 +1439,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <span class="price-duration">3 أشهر</span>
 <strong class="iptv-price">10,000 د.ع</strong>
 </div>
-<a class="order-small" href="https://wa.me/9647711608207?text=أريد%20MAX%20TV%203%20أشهر" target="_blank">واتساب</a>
+<a class="order-small"
+onclick="order('MAX TV - 3 أشهر - 10000 د.ع')">واتساب</a>
 </div>
 
 <div class="price-box">
@@ -1555,7 +1448,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <span class="price-duration">6 أشهر</span>
 <strong class="iptv-price">15,000 د.ع</strong>
 </div>
-<a class="order-small" href="https://wa.me/9647711608207?text=أريد%20MAX%20TV%206%20أشهر" target="_blank">واتساب</a>
+<a class="order-small"
+onclick="order('MAX TV - 6 أشهر - 15000 د.ع')">واتساب</a>
 </div>
 
 <div class="price-box">
@@ -1563,7 +1457,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <span class="price-duration">سنة</span>
 <strong class="iptv-price">25,000 د.ع</strong>
 </div>
-<a class="order-small" href="https://wa.me/9647711608207?text=أريد%20MAX%20TV%20سنة" target="_blank">واتساب</a>
+<a class="order-small"
+onclick="order('MAX TV - سنة - 25000 د.ع')">واتساب</a>
 </div>
 
 </div>
@@ -1573,7 +1468,7 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 
 <!-- TIGER -->
 
-<div class="iptv-card">
+<div class="iptv-card tiger-card reveal">
 
 <div class="iptv-main">
 
@@ -1584,7 +1479,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <h3>TIGER IPTV</h3>
 
 <p class="description">
-قنوات وأفلام ومسلسلات ومحتوى متنوع بجودة ممتازة.
+قنوات وأفلام ومسلسلات ومحتوى متنوع
+بجودة ممتازة.
 </p>
 
 </div>
@@ -1598,7 +1494,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <span class="price-duration">الشهر</span>
 <strong class="iptv-price">3,000 د.ع</strong>
 </div>
-<a class="order-small" href="https://wa.me/9647711608207?text=أريد%20TIGER%20الشهر" target="_blank">واتساب</a>
+<a class="order-small"
+onclick="order('TIGER - الشهر - 3000 د.ع')">واتساب</a>
 </div>
 
 <div class="price-box">
@@ -1606,7 +1503,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <span class="price-duration">3 أشهر</span>
 <strong class="iptv-price">7,000 د.ع</strong>
 </div>
-<a class="order-small" href="https://wa.me/9647711608207?text=أريد%20TIGER%203%20أشهر" target="_blank">واتساب</a>
+<a class="order-small"
+onclick="order('TIGER - 3 أشهر - 7000 د.ع')">واتساب</a>
 </div>
 
 <div class="price-box">
@@ -1614,7 +1512,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <span class="price-duration">6 أشهر</span>
 <strong class="iptv-price">13,000 د.ع</strong>
 </div>
-<a class="order-small" href="https://wa.me/9647711608207?text=أريد%20TIGER%206%20أشهر" target="_blank">واتساب</a>
+<a class="order-small"
+onclick="order('TIGER - 6 أشهر - 13000 د.ع')">واتساب</a>
 </div>
 
 <div class="price-box">
@@ -1622,7 +1521,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <span class="price-duration">سنة</span>
 <strong class="iptv-price">18,000 د.ع</strong>
 </div>
-<a class="order-small" href="https://wa.me/9647711608207?text=أريد%20TIGER%20سنة" target="_blank">واتساب</a>
+<a class="order-small"
+onclick="order('TIGER - سنة - 18000 د.ع')">واتساب</a>
 </div>
 
 </div>
@@ -1630,20 +1530,27 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 </div>
 
 
-<!-- BEST -->
+<!-- BEST 4K -->
 
-<div class="iptv-card">
+<div class="iptv-card best-card reveal">
 
 <div class="iptv-main">
 
-<div class="iptv-icon">🔥</div>
+<div class="iptv-icon">
+
+<img
+src="108931.jpg"
+alt="BEST 4K">
+
+</div>
 
 <div class="iptv-info">
 
 <h3>BEST 4K</h3>
 
 <p class="description">
-مكتبة ضخمة وجودة 4K وقنوات متنوعة ومحتوى ترفيهي ورياضي.
+مكتبة ضخمة وجودة 4K وقنوات متنوعة
+ومحتوى ترفيهي ورياضي.
 </p>
 
 </div>
@@ -1657,7 +1564,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <span class="price-duration">الشهر</span>
 <strong class="iptv-price">4,000 د.ع</strong>
 </div>
-<a class="order-small" href="https://wa.me/9647711608207?text=أريد%20BEST%204K%20الشهر" target="_blank">واتساب</a>
+<a class="order-small"
+onclick="order('BEST 4K - الشهر - 4000 د.ع')">واتساب</a>
 </div>
 
 <div class="price-box">
@@ -1665,7 +1573,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <span class="price-duration">3 أشهر</span>
 <strong class="iptv-price">9,000 د.ع</strong>
 </div>
-<a class="order-small" href="https://wa.me/9647711608207?text=أريد%20BEST%204K%203%20أشهر" target="_blank">واتساب</a>
+<a class="order-small"
+onclick="order('BEST 4K - 3 أشهر - 9000 د.ع')">واتساب</a>
 </div>
 
 <div class="price-box">
@@ -1673,7 +1582,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <span class="price-duration">6 أشهر</span>
 <strong class="iptv-price">13,000 د.ع</strong>
 </div>
-<a class="order-small" href="https://wa.me/9647711608207?text=أريد%20BEST%204K%206%20أشهر" target="_blank">واتساب</a>
+<a class="order-small"
+onclick="order('BEST 4K - 6 أشهر - 13000 د.ع')">واتساب</a>
 </div>
 
 <div class="price-box">
@@ -1681,7 +1591,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <span class="price-duration">سنة</span>
 <strong class="iptv-price">20,000 د.ع</strong>
 </div>
-<a class="order-small" href="https://wa.me/9647711608207?text=أريد%20BEST%204K%20سنة" target="_blank">واتساب</a>
+<a class="order-small"
+onclick="order('BEST 4K - سنة - 20000 د.ع + اشتراك مجاني')">واتساب</a>
 </div>
 
 </div>
@@ -1691,7 +1602,7 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 
 <!-- TOD -->
 
-<div class="iptv-card">
+<div class="iptv-card tod-card reveal">
 
 <div class="iptv-main">
 
@@ -1702,7 +1613,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <h3>TOD</h3>
 
 <p class="description">
-رياضة وبث مباشر ومحتوى رياضي مع خيارات للموبايل والشاشة.
+رياضة وبث مباشر ومحتوى رياضي،
+مع خيارات للموبايل والشاشة.
 </p>
 
 </div>
@@ -1716,7 +1628,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <span class="price-duration">موبايل</span>
 <strong class="iptv-price">15,000 د.ع</strong>
 </div>
-<a class="order-small" href="https://wa.me/9647711608207?text=أريد%20TOD%20موبايل" target="_blank">واتساب</a>
+<a class="order-small"
+onclick="order('TOD - موبايل - 15000 د.ع')">واتساب</a>
 </div>
 
 <div class="price-box">
@@ -1724,7 +1637,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <span class="price-duration">شاشة</span>
 <strong class="iptv-price">20,000 د.ع</strong>
 </div>
-<a class="order-small" href="https://wa.me/9647711608207?text=أريد%20TOD%20شاشة" target="_blank">واتساب</a>
+<a class="order-small"
+onclick="order('TOD - شاشة - 20000 د.ع')">واتساب</a>
 </div>
 
 <div class="price-box">
@@ -1732,7 +1646,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <span class="price-duration">موبايل + شاشة</span>
 <strong class="iptv-price">25,000 د.ع</strong>
 </div>
-<a class="order-small" href="https://wa.me/9647711608207?text=أريد%20TOD%20موبايل%20وشاشة" target="_blank">واتساب</a>
+<a class="order-small"
+onclick="order('TOD - موبايل + شاشة - 25000 د.ع')">واتساب</a>
 </div>
 
 </div>
@@ -1742,7 +1657,7 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 
 <!-- القناة الرابعة -->
 
-<div class="iptv-card">
+<div class="iptv-card reveal">
 
 <div class="iptv-main">
 
@@ -1753,7 +1668,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <h3>القناة الرابعة</h3>
 
 <p class="description">
-اشتراك لمتابعة المحتوى الرياضي والبرامج والقنوات المتوفرة.
+اشتراك لمتابعة المحتوى الرياضي
+والبرامج والقنوات المتوفرة.
 </p>
 
 </div>
@@ -1767,7 +1683,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <span class="price-duration">الشهر</span>
 <strong class="iptv-price">25,000 د.ع</strong>
 </div>
-<a class="order-small" href="https://wa.me/9647711608207?text=أريد%20القناة%20الرابعة%20الشهر" target="_blank">واتساب</a>
+<a class="order-small"
+onclick="order('القناة الرابعة - الشهر - 25000 د.ع')">واتساب</a>
 </div>
 
 <div class="price-box">
@@ -1775,7 +1692,8 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 <span class="price-duration">3 أشهر</span>
 <strong class="iptv-price">60,000 د.ع</strong>
 </div>
-<a class="order-small" href="https://wa.me/9647711608207?text=أريد%20القناة%20الرابعة%203%20أشهر" target="_blank">واتساب</a>
+<a class="order-small"
+onclick="order('القناة الرابعة - 3 أشهر - 60000 د.ع')">واتساب</a>
 </div>
 
 </div>
@@ -1787,9 +1705,11 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 </section>
 
 
-<!-- PLAYERS -->
+<!-- =====================================================
+     PLAYERS
+===================================================== -->
 
-<section class="product-section cyan">
+<section class="section players">
 
 <div class="section-head">
 
@@ -1798,125 +1718,91 @@ href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20ع
 </div>
 
 <div class="section-note">
-اختار المشغل المناسب
+اختر بالتمرير
 </div>
 
 </div>
 
-<div class="player-grid">
+<div class="player-scroll">
 
-<div class="player">
+<div class="player reveal">
+
 <div class="player-icon">📺</div>
+
 <h3>IBO PLAYER</h3>
+
 <p>تفعيل المشغل</p>
+
 <div class="player-price">10,000 د.ع</div>
+
 <p>اشتراك سنوي</p>
-<a class="product-order" href="https://wa.me/9647711608207?text=أريد%20IBO%20PLAYER%20سنوي" target="_blank">💬 اطلب عبر واتساب</a>
+
+<a class="order-small"
+onclick="order('IBO PLAYER - اشتراك سنوي - 10000 د.ع')">
+أطلب
+</a>
+
 </div>
 
-<div class="player">
+
+<div class="player reveal">
+
 <div class="player-icon">▶️</div>
+
 <h3>BOB PLAYER</h3>
+
 <p>تفعيل المشغل</p>
+
 <div class="player-price">10,000 د.ع</div>
+
 <p>اشتراك سنوي</p>
-<a class="product-order" href="https://wa.me/9647711608207?text=أريد%20BOB%20PLAYER%20سنوي" target="_blank">💬 اطلب عبر واتساب</a>
+
+<a class="order-small"
+onclick="order('BOB PLAYER - اشتراك سنوي - 10000 د.ع')">
+أطلب
+</a>
+
 </div>
 
-<div class="player">
+
+<div class="player reveal">
+
 <div class="player-icon">❌</div>
+
 <h3>X PLAYER</h3>
+
 <p>تفعيل المشغل</p>
+
 <div class="player-price">10,000 د.ع</div>
+
 <p>اشتراك سنوي</p>
-<a class="product-order" href="https://wa.me/9647711608207?text=أريد%20X%20PLAYER%20سنوي" target="_blank">💬 اطلب عبر واتساب</a>
-</div>
 
-</div>
-
-</section>
-
-
-<!-- AI -->
-
-<section class="product-section purple" id="ai">
-
-<div class="section-head">
-
-<div class="section-title">
-🤖 قسم الذكاء الاصطناعي
-</div>
-
-<div class="section-note">
-AI PREMIUM
-</div>
-
-</div>
-
-<div class="product-scroll">
-
-<div class="product-card">
-
-<div class="product-image">
-<div class="product-placeholder">✨</div>
-</div>
-
-<div class="product-content">
-
-<div class="product-top">
-<div class="product-name">Gemini</div>
-<div class="product-badge">18 شهر</div>
-</div>
-
-<p class="product-description">
-اشتراك Gemini لمدة سنة ونصف للاستفادة من أدوات الذكاء الاصطناعي المتقدمة.
-</p>
-
-<div class="product-price">
-<span>18 شهر</span>
-<strong>20,000 د.ع</strong>
-</div>
-
-<a class="product-order"
-href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20اشتراك%20Gemini%2018%20شهر"
-target="_blank">
-💬 اطلب Gemini
+<a class="order-small"
+onclick="order('X PLAYER - اشتراك سنوي - 10000 د.ع')">
+أطلب
 </a>
 
 </div>
 
-</div>
 
+<div class="player hot-player reveal">
 
-<div class="product-card">
+<div class="hot-badge">HOT</div>
 
-<div class="product-image">
-<div class="product-placeholder">🤖</div>
-</div>
+<div class="player-icon">🔥</div>
 
-<div class="product-content">
+<h3>HOT PLAYER</h3>
 
-<div class="product-top">
-<div class="product-name">ChatGPT</div>
-<div class="product-badge">شهر</div>
-</div>
+<p>تفعيل المشغل</p>
 
-<p class="product-description">
-اشتراك ChatGPT للاستفادة من أدوات الذكاء الاصطناعي والمزايا المتقدمة.
-</p>
+<div class="player-price">10,000 د.ع</div>
 
-<div class="product-price">
-<span>الشهر</span>
-<strong>15,000 د.ع</strong>
-</div>
+<p>اشتراك سنوي</p>
 
-<a class="product-order"
-href="https://wa.me/9647711608207?text=السلام%20عليكم%20أريد%20اشتراك%20ChatGPT%20الشهر"
-target="_blank">
-💬 اطلب ChatGPT
+<a class="order-small"
+onclick="order('HOT PLAYER - اشتراك سنوي - 10000 د.ع')">
+أطلب
 </a>
-
-</div>
 
 </div>
 
@@ -1925,144 +1811,63 @@ target="_blank">
 </section>
 
 
-<!-- MOVIES -->
+<!-- =====================================================
+     AI
+===================================================== -->
 
-<section class="product-section pink" id="movies">
+<section class="category ai">
 
-<div class="section-head">
+<div class="cat-head">
 
-<div class="section-title">
-🎬 الأفلام والمسلسلات
+<div class="cat-icon">🤖</div>
+
+<div>
+<h2>الذكاء الاصطناعي AI</h2>
+<p>اشتراكات الذكاء الاصطناعي</p>
 </div>
 
-<div class="section-note">
-ترفيه • أفلام • مسلسلات
 </div>
 
+<div class="items">
+
+<div class="item ai-item">
+
+<div class="ai-logo">✨</div>
+
+<strong>Gemini</strong>
+
+<span>
+اشتراك جيمناي لمدة سنة ونصف
+</span>
+
+<div class="item-price">
+20,000 د.ع
 </div>
 
-<div class="product-scroll">
-
-<div class="product-card">
-
-<div class="product-image">
-<div class="product-placeholder">📺</div>
-</div>
-
-<div class="product-content">
-
-<div class="product-top">
-<div class="product-name">شاهد</div>
-<div class="product-badge">شهري</div>
-</div>
-
-<p class="product-description">
-محتوى عربي وترفيهي ومسلسلات وأفلام متنوعة.
-</p>
-
-<div class="product-price">
-<span>الشهر</span>
-<strong>10,000 د.ع</strong>
-</div>
-
-<a class="product-order" href="https://wa.me/9647711608207?text=أريد%20اشتراك%20شاهد%20الشهر" target="_blank">
-💬 اطلب شاهد
+<a onclick="order('Gemini - 18 شهر - 20000 د.ع')">
+💬 اشترك الآن
 </a>
 
 </div>
 
+
+<div class="item ai-item">
+
+<div class="ai-logo">🤖</div>
+
+<strong>ChatGPT</strong>
+
+<span>
+اشتراك ChatGPT لمدة شهر
+</span>
+
+<div class="item-price">
+15,000 د.ع
 </div>
 
-
-<div class="product-card">
-
-<div class="product-image">
-<div class="product-placeholder">🎬</div>
-</div>
-
-<div class="product-content">
-
-<div class="product-top">
-<div class="product-name">Netflix</div>
-<div class="product-badge">شهري</div>
-</div>
-
-<p class="product-description">
-أفلام ومسلسلات عالمية ومحتوى ترفيهي متنوع.
-</p>
-
-<div class="product-price">
-<span>الشهر</span>
-<strong>8,000 د.ع</strong>
-</div>
-
-<a class="product-order" href="https://wa.me/9647711608207?text=أريد%20اشتراك%20Netflix%20الشهر" target="_blank">
-💬 اطلب Netflix
+<a onclick="order('ChatGPT - شهر - 15000 د.ع')">
+💬 اشترك الآن
 </a>
-
-</div>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-image">
-<div class="product-placeholder">📦</div>
-</div>
-
-<div class="product-content">
-
-<div class="product-top">
-<div class="product-name">Amazon Prime</div>
-<div class="product-badge">شهري</div>
-</div>
-
-<p class="product-description">
-أفلام ومسلسلات ومحتوى ترفيهي من Prime Video.
-</p>
-
-<div class="product-price">
-<span>الشهر</span>
-<strong>8,000 د.ع</strong>
-</div>
-
-<a class="product-order" href="https://wa.me/9647711608207?text=أريد%20Amazon%20Prime%20الشهر" target="_blank">
-💬 اطلب Amazon Prime
-</a>
-
-</div>
-
-</div>
-
-
-<div class="product-card">
-
-<div class="product-image">
-<div class="product-placeholder">▶️</div>
-</div>
-
-<div class="product-content">
-
-<div class="product-top">
-<div class="product-name">YouTube Premium</div>
-<div class="product-badge">شهري</div>
-</div>
-
-<p class="product-description">
-مشاهدة بدون إعلانات ومزايا Premium وتجربة مشاهدة أفضل.
-</p>
-
-<div class="product-price">
-<span>الشهر</span>
-<strong>8,000 د.ع</strong>
-</div>
-
-<a class="product-order" href="https://wa.me/9647711608207?text=أريد%20YouTube%20Premium%20الشهر" target="_blank">
-💬 اطلب YouTube Premium
-</a>
-
-</div>
 
 </div>
 
@@ -2071,82 +1876,97 @@ target="_blank">
 </section>
 
 
-<!-- DESIGN -->
+<!-- =====================================================
+     MOVIES & SERIES
+===================================================== -->
 
-<section class="product-section blue" id="design">
+<section class="category entertainment">
 
-<div class="section-head">
+<div class="cat-head">
 
-<div class="section-title">
-🎨 التصميم والمونتاج
+<div class="cat-icon">🎬</div>
+
+<div>
+<h2>الأفلام والمسلسلات</h2>
+<p>اشتراكات الترفيه والمشاهدة</p>
 </div>
 
-<div class="section-note">
-تصميم • مونتاج
 </div>
 
+<div class="items">
+
+<div class="item">
+
+<strong>📺 شاهد</strong>
+
+<span>
+اشتراك شاهد
+</span>
+
+<div class="item-price">
+10,000 د.ع / شهر
 </div>
 
-<div class="product-scroll">
-
-<div class="product-card">
-
-<div class="product-image">
-<div class="product-placeholder">🎨</div>
-</div>
-
-<div class="product-content">
-
-<div class="product-top">
-<div class="product-name">Canva</div>
-<div class="product-badge">سنوي</div>
-</div>
-
-<p class="product-description">
-أدوات تصميم احترافية وقوالب ومزايا Canva المتقدمة.
-</p>
-
-<div class="product-price">
-<span>سنة</span>
-<strong>15,000 د.ع</strong>
-</div>
-
-<a class="product-order" href="https://wa.me/9647711608207?text=أريد%20اشتراك%20Canva%20سنوي" target="_blank">
-💬 اطلب Canva
+<a onclick="order('شاهد - شهر - 10000 د.ع')">
+💬 اشتراك
 </a>
 
 </div>
 
+
+<div class="item">
+
+<strong>🎬 Netflix</strong>
+
+<span>
+اشتراك نتفليكس
+</span>
+
+<div class="item-price">
+8,000 د.ع / شهر
 </div>
 
-
-<div class="product-card">
-
-<div class="product-image">
-<div class="product-placeholder">✂️</div>
-</div>
-
-<div class="product-content">
-
-<div class="product-top">
-<div class="product-name">CapCut</div>
-<div class="product-badge">شهري</div>
-</div>
-
-<p class="product-description">
-أدوات مونتاج وتأثيرات وقوالب ومزايا احترافية.
-</p>
-
-<div class="product-price">
-<span>الشهر</span>
-<strong>15,000 د.ع</strong>
-</div>
-
-<a class="product-order" href="https://wa.me/9647711608207?text=أريد%20اشتراك%20CapCut%20الشهر" target="_blank">
-💬 اطلب CapCut
+<a onclick="order('Netflix - شهر - 8000 د.ع')">
+💬 اشتراك
 </a>
 
 </div>
+
+
+<div class="item">
+
+<strong>🎞️ Amazon Prime</strong>
+
+<span>
+اشتراك أمازون برايم
+</span>
+
+<div class="item-price">
+8,000 د.ع / شهر
+</div>
+
+<a onclick="order('Amazon Prime - شهر - 8000 د.ع')">
+💬 اشتراك
+</a>
+
+</div>
+
+
+<div class="item">
+
+<strong>▶️ YouTube Premium</strong>
+
+<span>
+اشتراك يوتيوب بريميوم
+</span>
+
+<div class="item-price">
+8,000 د.ع / شهر
+</div>
+
+<a onclick="order('YouTube Premium - شهر - 8000 د.ع')">
+💬 اشتراك
+</a>
 
 </div>
 
@@ -2155,9 +1975,72 @@ target="_blank">
 </section>
 
 
-<!-- GAMES -->
+<!-- =====================================================
+     DESIGN & EDITING
+===================================================== -->
 
-<section class="category games" id="games">
+<section class="category design">
+
+<div class="cat-head">
+
+<div class="cat-icon">🎨</div>
+
+<div>
+<h2>التصميم والمونتاج</h2>
+<p>أدوات التصميم وصناعة المحتوى</p>
+</div>
+
+</div>
+
+<div class="items">
+
+<div class="item">
+
+<strong>🎨 Canva</strong>
+
+<span>
+اشتراك Canva
+</span>
+
+<div class="item-price">
+15,000 د.ع / سنة
+</div>
+
+<a onclick="order('Canva - اشتراك سنوي - 15000 د.ع')">
+💬 اشتراك
+</a>
+
+</div>
+
+
+<div class="item">
+
+<strong>✂️ CapCut</strong>
+
+<span>
+اشتراك CapCut Pro
+</span>
+
+<div class="item-price">
+15,000 د.ع / شهر
+</div>
+
+<a onclick="order('CapCut Pro - شهر - 15000 د.ع')">
+💬 اشتراك
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     GAMES
+===================================================== -->
+
+<section class="category games">
 
 <div class="cat-head">
 
@@ -2165,148 +2048,104 @@ target="_blank">
 
 <div>
 <h2>الألعاب</h2>
-<p>شحن الألعاب والباقات والفئات المتوفرة</p>
+<p>شحن الألعاب والعروض الخاصة</p>
 </div>
 
 </div>
 
-<div class="cat-scroll">
+<div class="items">
 
-<div class="cat-card">
+<div class="item">
 
-<div class="cat-card-image">
-🎯
+<strong>⚽ PES Mobile</strong>
+
+<span>
+باك سواريز
+</span>
+
+<div class="item-price">
+3,000 د.ع
 </div>
 
-<div class="cat-card-content">
-<h3>PUBG Mobile</h3>
-<p>شحن UC لجميع الفئات المتوفرة.</p>
-
-<div class="cat-price">
-<span>السعر حسب الفئة</span>
-<strong>استفسار</strong>
-</div>
-
-<a class="cat-order" onclick="order('شحن PUBG Mobile')">
-💬 اطلب عبر واتساب
+<a onclick="order('PES Mobile - باك سواريز - 3000 د.ع')">
+💬 طلب
 </a>
-</div>
 
 </div>
 
 
-<div class="cat-card">
+<div class="item">
 
-<div class="cat-card-image">
-🔥
+<strong>🎲 Yalla Ludo</strong>
+
+<span>
+5150 ماسة
+</span>
+
+<div class="item-price">
+15,000 د.ع
 </div>
 
-<div class="cat-card-content">
-<h3>Free Fire</h3>
-<p>شحن Diamonds لجميع الفئات.</p>
-
-<div class="cat-price">
-<span>السعر حسب الفئة</span>
-<strong>استفسار</strong>
-</div>
-
-<a class="cat-order" onclick="order('شحن Free Fire')">
-💬 اطلب عبر واتساب
+<a onclick="order('Yalla Ludo - 5150 ماسة - 15000 د.ع')">
+💬 طلب
 </a>
-</div>
 
 </div>
 
 
-<div class="cat-card">
-
-<div class="cat-card-image">
-💎
-</div>
-
-<div class="cat-card-content">
-<h3>Yalla Ludo</h3>
-<p>5150 ماسة ضمن العرض الخاص.</p>
-
-<div class="cat-price">
-<span>5150 ماسة</span>
-<strong>15,000 د.ع</strong>
-</div>
-
-<a class="cat-order" onclick="order('Yalla Ludo 5150 ماسة')">
-💬 اطلب عبر واتساب
-</a>
-</div>
-
+<div class="item">
+<strong>🎯 PUBG Mobile</strong>
+<span>UC — جميع الفئات</span>
+<a onclick="order('شحن PUBG Mobile')">💬 طلب</a>
 </div>
 
 
-<div class="cat-card">
-
-<div class="cat-card-image">
-⚽
-</div>
-
-<div class="cat-card-content">
-<h3>eFootball</h3>
-<p>Coins وشحن الفئات المتوفرة.</p>
-
-<div class="cat-price">
-<span>حسب الفئة</span>
-<strong>استفسار</strong>
-</div>
-
-<a class="cat-order" onclick="order('شحن eFootball')">
-💬 اطلب عبر واتساب
-</a>
-</div>
-
+<div class="item">
+<strong>💎 Free Fire</strong>
+<span>Diamonds — جميع الفئات</span>
+<a onclick="order('شحن Free Fire')">💬 طلب</a>
 </div>
 
 
-<div class="cat-card">
-
-<div class="cat-card-image">
-🏎️
-</div>
-
-<div class="cat-card-content">
-<h3>FC Mobile</h3>
-<p>شحن Points لجميع الفئات.</p>
-
-<div class="cat-price">
-<span>حسب الفئة</span>
-<strong>استفسار</strong>
-</div>
-
-<a class="cat-order" onclick="order('شحن FC Mobile')">
-💬 اطلب عبر واتساب
-</a>
-</div>
-
+<div class="item">
+<strong>⚽ eFootball</strong>
+<span>Coins — جميع الفئات</span>
+<a onclick="order('شحن eFootball')">💬 طلب</a>
 </div>
 
 
-<div class="cat-card">
-
-<div class="cat-card-image">
-🎮
+<div class="item">
+<strong>🧱 Roblox</strong>
+<span>Robux — جميع الفئات</span>
+<a onclick="order('Roblox Robux')">💬 طلب</a>
 </div>
 
-<div class="cat-card-content">
-<h3>PlayStation</h3>
-<p>بطاقات PSN وجميع الفئات المتوفرة.</p>
 
-<div class="cat-price">
-<span>حسب الفئة</span>
-<strong>استفسار</strong>
+<div class="item">
+<strong>🎮 PlayStation</strong>
+<span>PSN — جميع الفئات</span>
+<a onclick="order('PlayStation')">💬 طلب</a>
 </div>
 
-<a class="cat-order" onclick="order('PlayStation')">
-💬 اطلب عبر واتساب
-</a>
+
+<div class="item">
+<strong>🎮 Xbox</strong>
+<span>Gift Cards — جميع الفئات</span>
+<a onclick="order('Xbox')">💬 طلب</a>
 </div>
 
+
+<div class="item">
+<strong>🎮 Steam</strong>
+<span>Steam Wallet — جميع الفئات</span>
+<a onclick="order('Steam')">💬 طلب</a>
+</div>
+
+
+<div class="item">
+<strong>🔥 Call of Duty</strong>
+<span>CP — جميع الفئات</span>
+<a onclick="order('Call of Duty')">💬 طلب</a>
 </div>
 
 </div>
@@ -2314,9 +2153,77 @@ target="_blank">
 </section>
 
 
-<!-- CARDS -->
+<!-- =====================================================
+     INTERNET
+===================================================== -->
 
-<section class="category cards" id="cards">
+<section class="category internet">
+
+<div class="cat-head">
+
+<div class="cat-icon">🌐</div>
+
+<div>
+<h2>الإنترنت</h2>
+<p>تجديد وشحن الخدمات</p>
+</div>
+
+</div>
+
+<div class="items">
+
+<div class="item">
+<strong>🌐 الوطني FTTH</strong>
+<span>تجديد الاشتراك</span>
+<a onclick="order('الوطني FTTH')">💬 طلب</a>
+</div>
+
+<div class="item">
+<strong>⚡ سوبر سيل</strong>
+<span>تجديد الاشتراك</span>
+<a onclick="order('سوبر سيل')">💬 طلب</a>
+</div>
+
+<div class="item">
+<strong>📡 الجزيرة</strong>
+<span>تجديد وشحن</span>
+<a onclick="order('الجزيرة')">💬 طلب</a>
+</div>
+
+<div class="item">
+<strong>📶 الرحمة</strong>
+<span>تجديد الاشتراك</span>
+<a onclick="order('الرحمة')">💬 طلب</a>
+</div>
+
+<div class="item">
+<strong>🚀 هرنز</strong>
+<span>تجديد سريع</span>
+<a onclick="order('هرنز')">💬 طلب</a>
+</div>
+
+<div class="item">
+<strong>📱 آسياسيل</strong>
+<span>كروت وشحن</span>
+<a onclick="order('آسياسيل')">💬 طلب</a>
+</div>
+
+<div class="item">
+<strong>📲 زين</strong>
+<span>كروت وشحن</span>
+<a onclick="order('زين')">💬 طلب</a>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CARDS
+===================================================== -->
+
+<section class="category cards">
 
 <div class="cat-head">
 
@@ -2324,108 +2231,59 @@ target="_blank">
 
 <div>
 <h2>البطاقات الإلكترونية</h2>
-<p>بطاقات الألعاب والخدمات الرقمية</p>
+<p>البطاقات والفئات المتوفرة</p>
 </div>
 
 </div>
 
-<div class="cat-scroll">
+<div class="items">
 
-<div class="cat-card">
-<div class="cat-card-image">🍎</div>
-<div class="cat-card-content">
-<h3>Apple Gift Card</h3>
-<p>1$ — 2$ — 5$ — 10$ — 15$ — 25$ — 50$ — 100$</p>
-<div class="cat-price">
-<span>السعر</span>
-<strong>واتساب</strong>
-</div>
-<a class="cat-order" onclick="order('Apple Gift Card')">💬 معرفة السعر</a>
-</div>
+<div class="item">
+<strong>🍎 Apple Gift Card</strong>
+<span>1$ — 2$ — 5$ — 10$ — 15$ — 25$ — 50$ — 100$</span>
+<a onclick="order('Apple Gift Card')">السعر واتساب</a>
 </div>
 
-
-<div class="cat-card">
-<div class="cat-card-image">▶️</div>
-<div class="cat-card-content">
-<h3>Google Play</h3>
-<p>5$ — 10$ — 15$ — 25$ — 50$ — 100$</p>
-<div class="cat-price">
-<span>السعر</span>
-<strong>واتساب</strong>
-</div>
-<a class="cat-order" onclick="order('Google Play Gift Card')">💬 معرفة السعر</a>
-</div>
+<div class="item">
+<strong>▶️ Google Play</strong>
+<span>5$ — 10$ — 15$ — 25$ — 50$ — 100$</span>
+<a onclick="order('Google Play')">السعر واتساب</a>
 </div>
 
-
-<div class="cat-card">
-<div class="cat-card-image">🎮</div>
-<div class="cat-card-content">
-<h3>PlayStation</h3>
-<p>10$ — 20$ — 25$ — 50$ — 75$ — 100$</p>
-<div class="cat-price">
-<span>السعر</span>
-<strong>واتساب</strong>
-</div>
-<a class="cat-order" onclick="order('PlayStation Gift Card')">💬 معرفة السعر</a>
-</div>
+<div class="item">
+<strong>🎮 PlayStation</strong>
+<span>10$ — 20$ — 25$ — 50$ — 75$ — 100$</span>
+<a onclick="order('PlayStation Gift Card')">السعر واتساب</a>
 </div>
 
-
-<div class="cat-card">
-<div class="cat-card-image">🎮</div>
-<div class="cat-card-content">
-<h3>Steam</h3>
-<p>5$ — 10$ — 20$ — 25$ — 50$ — 100$</p>
-<div class="cat-price">
-<span>السعر</span>
-<strong>واتساب</strong>
-</div>
-<a class="cat-order" onclick="order('Steam Gift Card')">💬 معرفة السعر</a>
-</div>
+<div class="item">
+<strong>🎮 Steam</strong>
+<span>5$ — 10$ — 20$ — 25$ — 50$ — 100$</span>
+<a onclick="order('Steam Gift Card')">السعر واتساب</a>
 </div>
 
-
-<div class="cat-card">
-<div class="cat-card-image">🎮</div>
-<div class="cat-card-content">
-<h3>Xbox</h3>
-<p>10$ — 15$ — 20$ — 25$ — 50$ — 100$</p>
-<div class="cat-price">
-<span>السعر</span>
-<strong>واتساب</strong>
-</div>
-<a class="cat-order" onclick="order('Xbox Gift Card')">💬 معرفة السعر</a>
-</div>
+<div class="item">
+<strong>🎮 Xbox</strong>
+<span>10$ — 15$ — 20$ — 25$ — 50$ — 100$</span>
+<a onclick="order('Xbox Gift Card')">السعر واتساب</a>
 </div>
 
-
-<div class="cat-card">
-<div class="cat-card-image">🎵</div>
-<div class="cat-card-content">
-<h3>Spotify</h3>
-<p>شهر — 3 أشهر — 6 أشهر — سنة</p>
-<div class="cat-price">
-<span>حسب الباقة</span>
-<strong>استفسار</strong>
-</div>
-<a class="cat-order" onclick="order('Spotify')">💬 معرفة السعر</a>
-</div>
+<div class="item">
+<strong>🚗 كريم</strong>
+<span>فئات متعددة حسب الطلب</span>
+<a onclick="order('بطاقات كريم')">السعر واتساب</a>
 </div>
 
+<div class="item">
+<strong>💳 بلي</strong>
+<span>فئات متعددة حسب الخدمة</span>
+<a onclick="order('بطاقات بلي')">السعر واتساب</a>
+</div>
 
-<div class="cat-card">
-<div class="cat-card-image">🚕</div>
-<div class="cat-card-content">
-<h3>كريم</h3>
-<p>بطاقات وفئات متعددة حسب الطلب.</p>
-<div class="cat-price">
-<span>حسب الفئة</span>
-<strong>استفسار</strong>
-</div>
-<a class="cat-order" onclick="order('بطاقات كريم')">💬 معرفة السعر</a>
-</div>
+<div class="item">
+<strong>🎵 Spotify</strong>
+<span>1 شهر — 3 أشهر — 6 أشهر — سنة</span>
+<a onclick="order('Spotify')">السعر واتساب</a>
 </div>
 
 </div>
@@ -2433,91 +2291,53 @@ target="_blank">
 </section>
 
 
-<!-- INTERNET -->
+<!-- =====================================================
+     FINANCE
+===================================================== -->
 
-<section class="category internet" id="internet">
+<section class="category money">
 
 <div class="cat-head">
 
-<div class="cat-icon">🌐</div>
+<div class="cat-icon">💸</div>
 
 <div>
-<h2>الإنترنت والشحن</h2>
-<p>تجديد وشحن الخدمات المتوفرة</p>
+<h2>الخدمات المالية</h2>
+<p>الخدمات المتوفرة في العراق</p>
 </div>
 
 </div>
 
-<div class="cat-scroll">
+<div class="items">
 
-<div class="cat-card">
-<div class="cat-card-image">🌐</div>
-<div class="cat-card-content">
-<h3>الوطني FTTH</h3>
-<p>تجديد الاشتراك وخدمات الإنترنت.</p>
-<div class="cat-price"><span>الخدمة</span><strong>طلب</strong></div>
-<a class="cat-order" onclick="order('الوطني FTTH')">💬 اطلب الخدمة</a>
-</div>
+<div class="item">
+<strong>💚 زين كاش</strong>
+<span>تحويل — إيداع — سحب — دفع</span>
+<a onclick="order('زين كاش')">💬 طلب</a>
 </div>
 
-<div class="cat-card">
-<div class="cat-card-image">⚡</div>
-<div class="cat-card-content">
-<h3>سوبر سيل</h3>
-<p>تجديد الاشتراك.</p>
-<div class="cat-price"><span>الخدمة</span><strong>طلب</strong></div>
-<a class="cat-order" onclick="order('سوبر سيل')">💬 اطلب الخدمة</a>
-</div>
+<div class="item">
+<strong>💙 آسيا حوالة</strong>
+<span>تحويل وشحن وخدمات مالية</span>
+<a onclick="order('آسيا حوالة')">💬 طلب</a>
 </div>
 
-<div class="cat-card">
-<div class="cat-card-image">📡</div>
-<div class="cat-card-content">
-<h3>الجزيرة</h3>
-<p>تجديد وشحن الخدمة.</p>
-<div class="cat-price"><span>الخدمة</span><strong>طلب</strong></div>
-<a class="cat-order" onclick="order('الجزيرة')">💬 اطلب الخدمة</a>
-</div>
+<div class="item">
+<strong>⚡ فاست بي</strong>
+<span>تحويل وشحن</span>
+<a onclick="order('فاست بي')">💬 طلب</a>
 </div>
 
-<div class="cat-card">
-<div class="cat-card-image">📶</div>
-<div class="cat-card-content">
-<h3>الرحمة</h3>
-<p>تجديد الاشتراك.</p>
-<div class="cat-price"><span>الخدمة</span><strong>طلب</strong></div>
-<a class="cat-order" onclick="order('الرحمة')">💬 اطلب الخدمة</a>
-</div>
+<div class="item">
+<strong>💳 ماستر كارد</strong>
+<span>خدمات وشحن البطاقات</span>
+<a onclick="order('ماستر كارد')">💬 طلب</a>
 </div>
 
-<div class="cat-card">
-<div class="cat-card-image">🚀</div>
-<div class="cat-card-content">
-<h3>هرنز</h3>
-<p>تجديد سريع.</p>
-<div class="cat-price"><span>الخدمة</span><strong>طلب</strong></div>
-<a class="cat-order" onclick="order('هرنز')">💬 اطلب الخدمة</a>
-</div>
-</div>
-
-<div class="cat-card">
-<div class="cat-card-image">📱</div>
-<div class="cat-card-content">
-<h3>آسياسيل</h3>
-<p>كروت وشحن.</p>
-<div class="cat-price"><span>الخدمة</span><strong>طلب</strong></div>
-<a class="cat-order" onclick="order('آسياسيل')">💬 اطلب الخدمة</a>
-</div>
-</div>
-
-<div class="cat-card">
-<div class="cat-card-image">📲</div>
-<div class="cat-card-content">
-<h3>زين</h3>
-<p>كروت وشحن.</p>
-<div class="cat-price"><span>الخدمة</span><strong>طلب</strong></div>
-<a class="cat-order" onclick="order('زين')">💬 اطلب الخدمة</a>
-</div>
+<div class="item">
+<strong>🚕 بلي</strong>
+<span>خدمات تكسي بلي</span>
+<a onclick="order('تكسي بلي')">💬 طلب</a>
 </div>
 
 </div>
@@ -2525,9 +2345,11 @@ target="_blank">
 </section>
 
 
-<!-- SOCIAL -->
+<!-- =====================================================
+     SOCIAL
+===================================================== -->
 
-<section class="category social" id="social">
+<section class="category social">
 
 <div class="cat-head">
 
@@ -2535,91 +2357,59 @@ target="_blank">
 
 <div>
 <h2>السوشيال ميديا</h2>
-<p>خدمات المنصات والتفاعل</p>
+<p>جميع المنصات والخدمات</p>
 </div>
 
 </div>
 
-<div class="cat-scroll">
+<div class="items">
 
-<div class="cat-card">
-<div class="cat-card-image">📘</div>
-<div class="cat-card-content">
-<h3>Facebook</h3>
-<p>متابعين — إعجابات — مشاهدات — تفاعل.</p>
-<div class="cat-price"><span>حسب الخدمة</span><strong>استفسار</strong></div>
-<a class="cat-order" onclick="order('خدمات Facebook')">💬 معرفة السعر</a>
-</div>
+<div class="item">
+<strong>📘 Facebook</strong>
+<span>متابعين — إعجابات — مشاهدات — تفاعل</span>
+<a onclick="order('خدمات Facebook')">السعر واتساب</a>
 </div>
 
-<div class="cat-card">
-<div class="cat-card-image">📸</div>
-<div class="cat-card-content">
-<h3>Instagram</h3>
-<p>متابعين — لايكات — مشاهدات — ريلز.</p>
-<div class="cat-price"><span>حسب الخدمة</span><strong>استفسار</strong></div>
-<a class="cat-order" onclick="order('خدمات Instagram')">💬 معرفة السعر</a>
-</div>
+<div class="item">
+<strong>📸 Instagram</strong>
+<span>متابعين — لايكات — مشاهدات — ريلز</span>
+<a onclick="order('خدمات Instagram')">السعر واتساب</a>
 </div>
 
-<div class="cat-card">
-<div class="cat-card-image">🎵</div>
-<div class="cat-card-content">
-<h3>TikTok</h3>
-<p>متابعين — إعجابات — مشاهدات.</p>
-<div class="cat-price"><span>حسب الخدمة</span><strong>استفسار</strong></div>
-<a class="cat-order" onclick="order('خدمات TikTok')">💬 معرفة السعر</a>
-</div>
+<div class="item">
+<strong>🎵 TikTok</strong>
+<span>متابعين — إعجابات — مشاهدات</span>
+<a onclick="order('خدمات TikTok')">السعر واتساب</a>
 </div>
 
-<div class="cat-card">
-<div class="cat-card-image">✈️</div>
-<div class="cat-card-content">
-<h3>Telegram</h3>
-<p>أعضاء — مشاهدات — تفاعل.</p>
-<div class="cat-price"><span>حسب الخدمة</span><strong>استفسار</strong></div>
-<a class="cat-order" onclick="order('خدمات Telegram')">💬 معرفة السعر</a>
-</div>
+<div class="item">
+<strong>✈️ Telegram</strong>
+<span>أعضاء — مشاهدات — تفاعل</span>
+<a onclick="order('خدمات Telegram')">السعر واتساب</a>
 </div>
 
-<div class="cat-card">
-<div class="cat-card-image">▶️</div>
-<div class="cat-card-content">
-<h3>YouTube</h3>
-<p>مشتركين — مشاهدات — إعجابات.</p>
-<div class="cat-price"><span>حسب الخدمة</span><strong>استفسار</strong></div>
-<a class="cat-order" onclick="order('خدمات YouTube')">💬 معرفة السعر</a>
-</div>
+<div class="item">
+<strong>▶️ YouTube</strong>
+<span>مشتركين — مشاهدات — إعجابات</span>
+<a onclick="order('خدمات YouTube')">السعر واتساب</a>
 </div>
 
-<div class="cat-card">
-<div class="cat-card-image">👻</div>
-<div class="cat-card-content">
-<h3>Snapchat</h3>
-<p>مشاهدات وتفاعل.</p>
-<div class="cat-price"><span>حسب الخدمة</span><strong>استفسار</strong></div>
-<a class="cat-order" onclick="order('خدمات Snapchat')">💬 معرفة السعر</a>
-</div>
+<div class="item">
+<strong>👻 Snapchat</strong>
+<span>مشاهدات — تفاعل</span>
+<a onclick="order('خدمات Snapchat')">السعر واتساب</a>
 </div>
 
-<div class="cat-card">
-<div class="cat-card-image">🧵</div>
-<div class="cat-card-content">
-<h3>Threads</h3>
-<p>متابعين وتفاعل.</p>
-<div class="cat-price"><span>حسب الخدمة</span><strong>استفسار</strong></div>
-<a class="cat-order" onclick="order('خدمات Threads')">💬 معرفة السعر</a>
-</div>
+<div class="item">
+<strong>🧵 Threads</strong>
+<span>متابعين وتفاعل</span>
+<a onclick="order('خدمات Threads')">السعر واتساب</a>
 </div>
 
-<div class="cat-card">
-<div class="cat-card-image">💬</div>
-<div class="cat-card-content">
-<h3>WhatsApp</h3>
-<p>خدمات وتسويق حسب الطلب.</p>
-<div class="cat-price"><span>حسب الخدمة</span><strong>استفسار</strong></div>
-<a class="cat-order" onclick="order('خدمات WhatsApp')">💬 معرفة السعر</a>
-</div>
+<div class="item">
+<strong>💬 WhatsApp</strong>
+<span>خدمات وتسويق حسب الطلب</span>
+<a onclick="order('خدمات WhatsApp')">السعر واتساب</a>
 </div>
 
 </div>
@@ -2627,81 +2417,11 @@ target="_blank">
 </section>
 
 
-<!-- FINANCE -->
+<!-- =====================================================
+     SPORTS
+===================================================== -->
 
-<section class="category money" id="money">
-
-<div class="cat-head">
-
-<div class="cat-icon">💰</div>
-
-<div>
-<h2>الخدمات المالية</h2>
-<p>خدمات مالية وشحن وتحويل</p>
-</div>
-
-</div>
-
-<div class="cat-scroll">
-
-<div class="cat-card">
-<div class="cat-card-image">💚</div>
-<div class="cat-card-content">
-<h3>زين كاش</h3>
-<p>تحويل — إيداع — سحب — دفع.</p>
-<div class="cat-price"><span>الخدمة</span><strong>طلب</strong></div>
-<a class="cat-order" onclick="order('زين كاش')">💬 اطلب الخدمة</a>
-</div>
-</div>
-
-<div class="cat-card">
-<div class="cat-card-image">💙</div>
-<div class="cat-card-content">
-<h3>آسيا حوالة</h3>
-<p>تحويل وشحن وخدمات مالية.</p>
-<div class="cat-price"><span>الخدمة</span><strong>طلب</strong></div>
-<a class="cat-order" onclick="order('آسيا حوالة')">💬 اطلب الخدمة</a>
-</div>
-</div>
-
-<div class="cat-card">
-<div class="cat-card-image">⚡</div>
-<div class="cat-card-content">
-<h3>فاست بي</h3>
-<p>تحويل وشحن.</p>
-<div class="cat-price"><span>الخدمة</span><strong>طلب</strong></div>
-<a class="cat-order" onclick="order('فاست بي')">💬 اطلب الخدمة</a>
-</div>
-</div>
-
-<div class="cat-card">
-<div class="cat-card-image">💳</div>
-<div class="cat-card-content">
-<h3>ماستر كارد</h3>
-<p>خدمات وشحن البطاقات.</p>
-<div class="cat-price"><span>الخدمة</span><strong>طلب</strong></div>
-<a class="cat-order" onclick="order('ماستر كارد')">💬 اطلب الخدمة</a>
-</div>
-</div>
-
-<div class="cat-card">
-<div class="cat-card-image">🚕</div>
-<div class="cat-card-content">
-<h3>بلي</h3>
-<p>خدمات تكسي بلي.</p>
-<div class="cat-price"><span>الخدمة</span><strong>طلب</strong></div>
-<a class="cat-order" onclick="order('تكسي بلي')">💬 اطلب الخدمة</a>
-</div>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- SPORTS -->
-
-<section class="category sports" id="sports">
+<section class="category sports">
 
 <div class="cat-head">
 
@@ -2714,46 +2434,30 @@ target="_blank">
 
 </div>
 
-<div class="cat-scroll">
+<div class="items">
 
-<div class="cat-card">
-<div class="cat-card-image">⚽</div>
-<div class="cat-card-content">
-<h3>كرة القدم</h3>
-<p>أهم المباريات والبطولات.</p>
-<div class="cat-price"><span>الخدمة</span><strong>استفسار</strong></div>
-<a class="cat-order" onclick="order('خدمات كرة القدم')">💬 استفسار</a>
-</div>
+<div class="item">
+<strong>⚽ كرة القدم</strong>
+<span>أهم المباريات والبطولات</span>
+<a onclick="order('خدمات كرة القدم')">استفسار</a>
 </div>
 
-<div class="cat-card">
-<div class="cat-card-image">🏆</div>
-<div class="cat-card-content">
-<h3>البطولات العالمية</h3>
-<p>بطولات ومنافسات عالمية.</p>
-<div class="cat-price"><span>الخدمة</span><strong>استفسار</strong></div>
-<a class="cat-order" onclick="order('البطولات العالمية')">💬 استفسار</a>
-</div>
+<div class="item">
+<strong>🏆 البطولات العالمية</strong>
+<span>بطولات ومنافسات عالمية</span>
+<a onclick="order('البطولات العالمية')">استفسار</a>
 </div>
 
-<div class="cat-card">
-<div class="cat-card-image">📺</div>
-<div class="cat-card-content">
-<h3>القنوات الرياضية</h3>
-<p>قنوات رياضية متنوعة.</p>
-<div class="cat-price"><span>الخدمة</span><strong>استفسار</strong></div>
-<a class="cat-order" onclick="order('القنوات الرياضية')">💬 استفسار</a>
-</div>
+<div class="item">
+<strong>📺 القنوات الرياضية</strong>
+<span>قنوات رياضية متنوعة</span>
+<a onclick="order('القنوات الرياضية')">استفسار</a>
 </div>
 
-<div class="cat-card">
-<div class="cat-card-image">🏎️</div>
-<div class="cat-card-content">
-<h3>الفورمولا</h3>
-<p>سباقات ومحتوى رياضي.</p>
-<div class="cat-price"><span>الخدمة</span><strong>استفسار</strong></div>
-<a class="cat-order" onclick="order('الفورمولا')">💬 استفسار</a>
-</div>
+<div class="item">
+<strong>🏎️ الفورمولا</strong>
+<span>سباقات ومحتوى رياضي</span>
+<a onclick="order('الفورمولا')">استفسار</a>
 </div>
 
 </div>
@@ -2761,9 +2465,11 @@ target="_blank">
 </section>
 
 
-<!-- MEDIA -->
+<!-- =====================================================
+     MEDIA
+===================================================== -->
 
-<section class="media">
+<section class="media-section">
 
 <div class="media-box">
 
@@ -2775,31 +2481,23 @@ target="_blank">
 <div class="media-list">
 
 <div class="media-card">
-<div class="media-card-content">
-<strong>🎬 فيلم جديد</strong>
+<strong>🎬 أفلام عربية</strong>
 <small>أحدث الأفلام</small>
-</div>
 </div>
 
 <div class="media-card">
-<div class="media-card-content">
 <strong>🔥 أفلام 4K</strong>
 <small>جودة عالية</small>
 </div>
-</div>
 
 <div class="media-card">
-<div class="media-card-content">
 <strong>🍿 Cinema</strong>
 <small>ترفيه متواصل</small>
 </div>
-</div>
 
 <div class="media-card">
-<div class="media-card-content">
 <strong>⭐ Movies</strong>
 <small>اختيارات متنوعة</small>
-</div>
 </div>
 
 </div>
@@ -2817,24 +2515,18 @@ target="_blank">
 <div class="media-list">
 
 <div class="media-card">
-<div class="media-card-content">
 <strong>🇹🇷 مسلسلات تركية</strong>
 <small>الأحدث</small>
 </div>
-</div>
 
 <div class="media-card">
-<div class="media-card-content">
 <strong>🌎 مسلسلات أجنبية</strong>
 <small>الأحدث</small>
 </div>
-</div>
 
 <div class="media-card">
-<div class="media-card-content">
 <strong>🇦🇪 مسلسلات عربية</strong>
 <small>الأحدث</small>
-</div>
 </div>
 
 </div>
@@ -2844,7 +2536,9 @@ target="_blank">
 </section>
 
 
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer class="footer">
 
@@ -2874,7 +2568,7 @@ target="_blank">
 </footer>
 
 
-<!-- FLOAT WHATSAPP -->
+<!-- FLOATING WHATSAPP -->
 
 <a
 class="float-btn float-wa"
@@ -2910,11 +2604,6 @@ title="كروب متجر كارة ستور">
 <span>IPTV</span>
 </a>
 
-<a href="#games">
-<span class="bottom-icon">🎮</span>
-<span>الألعاب</span>
-</a>
-
 <a
 href="https://wa.me/9647711608207"
 target="_blank">
@@ -2935,7 +2624,7 @@ target="_blank">
 <script>
 
 /* =========================
-   واتساب
+   WHATSAPP
 ========================= */
 
 const PHONE="9647711608207";
@@ -2965,8 +2654,11 @@ let soundOn=false;
 
 function toggleSound(){
 
-const iframe=document.getElementById("storeVideo");
-const button=document.getElementById("soundBtn");
+const iframe=
+document.getElementById("storeVideo");
+
+const button=
+document.getElementById("soundBtn");
 
 if(!soundOn){
 
@@ -3007,7 +2699,7 @@ this.value.trim().toLowerCase();
 
 const products=
 document.querySelectorAll(
-".product-card,.cat-card,.iptv-card,.player,.offer-card"
+".item,.iptv-card,.player,.offer-card"
 );
 
 products.forEach(product=>{
@@ -3065,6 +2757,39 @@ block:"start"
 }
 
 });
+
+});
+
+
+/* =========================
+   REVEAL
+========================= */
+
+const observer=
+new IntersectionObserver(
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},
+{
+threshold:.08
+}
+);
+
+document.querySelectorAll(
+".reveal"
+).forEach(el=>{
+
+observer.observe(el);
 
 });
 
